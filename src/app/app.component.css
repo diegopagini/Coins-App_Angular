@@ -2,5 +2,8 @@ body {
   height: 100vh;
 }
 footer {
-  margin-top: 50%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
 }

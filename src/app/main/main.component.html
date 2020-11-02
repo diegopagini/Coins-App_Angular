@@ -2,20 +2,38 @@
   <table class="container">
     <thead>
       <tr>
-        <th *ngFor="let item of info">{{ item.data.name }}</th>
-        <th>Precio</th>
-        <th>Cap. de Mercado</th>
+        <th>Nombre</th>
+        <th>Simbolo</th>
+        <th>Ranking</th>
+        <th>Precio en Dolares</th>
         <th>Variación 24hs</th>
       </tr>
     </thead>
 
     <tbody>
-      <tr class="highlight">
-        <td>BitCoin</td>
-        <td>$</td>
-        <td>$0.87</td>
-        <td>$0.87</td>
+      <tr>
+        <td>
+          <li class="highlight" *ngFor="let item of currentData">{{ item.name }}</li>
+        </td>
+
+        <td>
+          <li class="highlight" *ngFor="let item of currentData">{{ item.symbol }}</li>
+        </td>
+        
+        <td>
+          <li class="highlight" *ngFor="let item of currentData">{{ item.rank }}</li>
+        </td>
+
+        <td>
+          <li class="highlight" *ngFor="let item of currentData">{{ item.priceUsd | currency}}</li>
+        </td>
+
+        <td>
+          <li class="highlight" *ngFor="let item of currentData">{{ item.changePercent24Hr | currency}}</li>
+        </td>
+
       </tr>
+      
     </tbody>
   </table>
 </main>

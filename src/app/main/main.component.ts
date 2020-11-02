@@ -7,7 +7,8 @@ import { ApiService } from '../services/api.service'
   styleUrls: ['./main.component.css']
 })
 export class MainComponent implements OnInit {
-  info: any = [];
+  info: any;
+  currentData: any = [];
 
   constructor(private apiService: ApiService) { }
 
@@ -15,6 +16,9 @@ export class MainComponent implements OnInit {
     this.apiService.getCoins().subscribe( (res) => {
       this.info = res;
       console.log('info', this.info)
+      this.currentData = this.info.data
+      console.log('currenData', this.currentData)
+
     })
   }
 
