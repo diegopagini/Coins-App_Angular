@@ -1,1 +1,21 @@
-<p>main works!</p>
+<main class="section">
+  <table class="container">
+    <thead>
+      <tr>
+        <th *ngFor="let item of info">{{ item.data.name }}</th>
+        <th>Precio</th>
+        <th>Cap. de Mercado</th>
+        <th>Variación 24hs</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr class="highlight">
+        <td>BitCoin</td>
+        <td>$</td>
+        <td>$0.87</td>
+        <td>$0.87</td>
+      </tr>
+    </tbody>
+  </table>
+</main>
