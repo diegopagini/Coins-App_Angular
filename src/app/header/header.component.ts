@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { format, } from 'date-fns'
 
 
 @Component({
@@ -11,10 +12,7 @@ export class HeaderComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-
-  }
-  getDate(){
-    new Date();
+    format(new Date(), "'Today is a' iiii")
   }
 
 }
