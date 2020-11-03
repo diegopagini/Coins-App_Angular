@@ -2,34 +2,41 @@
   <table class="container">
     <thead>
       <tr>
-        <th>Nombre</th>
-        <th>Simbolo</th>
-        <th>Ranking</th>
-        <th>Precio en Dolares</th>
-        <th>Variación 24hs</th>
+        <th class="center">Más Información</th>
+        <th class="center">Ranking</th>
+        <th class="center">Nombre</th>
+        <th class="center">Simbolo</th>
+        <th class="center">Precio en Dolares</th>
+        <th class="center">Variación 24hs</th>
       </tr>
     </thead>
 
     <tbody>
       <tr>
-        <td>
-          <li class="highlight" *ngFor="let item of currentData">{{ item.name }}</li>
-        </td>
 
         <td>
-          <li class="highlight" *ngFor="let item of currentData">{{ item.symbol }}</li>
+          <li class="highlight center " *ngFor="let item of currentData"><a class="waves-effect waves-light btn"></a>
+          </li>
         </td>
         
         <td>
-          <li class="highlight" *ngFor="let item of currentData">{{ item.rank }}</li>
+          <li class="highlight center" *ngFor="let item of currentData">{{ item.rank }}</li>
         </td>
 
         <td>
-          <li class="highlight" *ngFor="let item of currentData">{{ item.priceUsd | currency}}</li>
+          <li class="highlight center" *ngFor="let item of currentData">{{ item.name }}</li>
         </td>
 
         <td>
-          <li class="highlight" *ngFor="let item of currentData">{{ item.changePercent24Hr | currency}}</li>
+          <li class="highlight center" *ngFor="let item of currentData">{{ item.symbol }}</li>
+        </td>
+        
+        <td>
+          <li class="highlight center" *ngFor="let item of currentData">{{ item.priceUsd | currency}}</li>
+        </td>
+
+        <td>
+          <li class="highlight center" *ngFor="let item of currentData">{{ item.changePercent24Hr | currency}}</li>
         </td>
 
       </tr>
