@@ -1,6 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { format, } from 'date-fns'
-
 
 @Component({
   selector: 'app-header',
@@ -8,11 +6,12 @@ import { format, } from 'date-fns'
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-  
+
+  toDay;
+
   constructor() { }
 
   ngOnInit(): void {
-    format(new Date(), "'Today is a' iiii")
+    this.toDay = new Date()
   }
-
 }

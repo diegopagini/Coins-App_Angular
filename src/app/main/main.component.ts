@@ -8,8 +8,9 @@ import { Coins, CoinsData } from '../interfaces/coins.interface';
   styleUrls: ['./main.component.css']
 })
 export class MainComponent implements OnInit {
+
   @Output()
-  emitData = new EventEmitter();
+  newItemEvent = new EventEmitter<string>();
 
   currentData: Array<CoinsData>;
 
@@ -25,7 +26,7 @@ export class MainComponent implements OnInit {
       this.currentData = response.data;
       console.log(this.currentData);
 
-      this.emitData.emit(this.currentData[0].id);
+      this.newItemEvent.emit(this.currentData[0].name);
     });
   }
 

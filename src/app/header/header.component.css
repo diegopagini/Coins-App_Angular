@@ -1,7 +1,13 @@
 nav {
   background-color: #35bcb3de;
+  height: 100%;
 }
 
 .nav-wrapper {
   background-color: #35bcb3de;
+  height: 100%;
+}
+
+.date {
+  color: white;
 }
