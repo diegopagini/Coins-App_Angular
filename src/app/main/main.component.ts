@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { ApiService } from '../services/api.service'
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { ApiService } from '../services/api.service';
+import { Coins, CoinsData } from '../interfaces/coins.interface';
 
 @Component({
   selector: 'app-main',
@@ -7,20 +8,25 @@ import { ApiService } from '../services/api.service'
   styleUrls: ['./main.component.css']
 })
 export class MainComponent implements OnInit {
-  info: any;
-  currentData: any = [];
+  @Output()
+  emitData = new EventEmitter();
 
-  constructor(private apiService: ApiService) { }
+  currentData: Array<CoinsData>;
+
+  constructor(public apiService: ApiService) { }
 
   ngOnInit(): void {
-    this.apiService.getCoins().subscribe( (res) => {
-      this.info = res;
-      console.log('info', this.info)
-      this.currentData = this.info.data
-      console.log('currenData', this.currentData)
-
-    })
+    this.getData();
   }
 
+  // tslint:disable-next-line: typedef
+  getData() {
+    this.apiService.getCoins().subscribe((response: Coins) => {
+      this.currentData = response.data;
+      console.log(this.currentData);
+
+      this.emitData.emit(this.currentData[0].id);
+    });
+  }
 
 }
